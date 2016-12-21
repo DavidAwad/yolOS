@@ -11,7 +11,7 @@ build/boot.o: src/asm/boot.asm
 	nasm -f elf64 src/asm/boot.asm -o build/boot.o
 
 build/kernel.bin: build/multiboot_header.o build/boot.o src/asm/linker.ld
-	ld -n -o build/kernel.bin -T src/asm/linker.ld build/multiboot_header.o build/boot.o
+	x86_64-pc-elf-ld -n -o build/kernel.bin -T src/asm/linker.ld build/multiboot_header.o build/boot.o
 
 build/os.iso: build/kernel.bin src/asm/grub.cfg
 	mkdir -p build/isofiles/boot/grub
