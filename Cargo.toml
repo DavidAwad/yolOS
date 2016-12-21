@@ -1,0 +1,12 @@
+[package]
+name = "yolos"
+version = "0.1.0"
+authors = ["David Awad <davidawad64@gmail.com>"]
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.release]
+panic = "abort"
+
+[dependencies]

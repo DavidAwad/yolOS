@@ -42,3 +42,5 @@
 
 # Apple detritus
 .DS_Store
+target
+Cargo.lock
