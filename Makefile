@@ -2,6 +2,9 @@ default: run
 
 .PHONY: clean
 
+cargo:
+	xargo build --release --target x86_64-unknown-yolos-gnu
+
 ld/multiboot_header.o: src/asm/multiboot_header.asm
 	mkdir -p build
 	nasm -f elf64 src/asm/multiboot_header.asm -o build/multiboot_header.o
